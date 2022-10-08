@@ -8,12 +8,14 @@ const program = new Command();
 program
 	.command("node-server")
 	.description("Creates a template REST API using node and express")
-	.option("--auth", "implements basic authentication and authorization. NOTE: `--user is required with this`")
-	.option("--user", "implements a User Model and Controller")
+	.option("--auth", "Implements JWT authentication and authorization using cookies.")
+	.option("--user", "Implements a User Model and Controller")
+	.option("--google-oauth", "Implements google oauth2 along with JWT authentication")
+	.option("--view", "Implements a view controller for server-side rendering")
 	.action(nodeServer);
 	
 program
-	.command("react")
+	.command("react-app")
 	.description("Creates a template react app")
 	.option("--redux", "Implemets redux for advanced state maangement")
 	.action(nodeServer);

@@ -33,5 +33,10 @@
     },
     "bin": {
         "omni": "./index.js"
-    }
+    },
+    "keywords": [
+        "server",
+        "omni",
+        "create"
+    ]
 }
