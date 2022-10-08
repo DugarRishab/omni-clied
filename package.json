@@ -1,13 +1,13 @@
 {
     "name": "omni-clied",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "type": "module",
-    "author": "Rishab Dugar",
+    "author": "Rishab Dugar <www.anitadugar9163@gmail.com>(www.anitadugar9163@gmail.com)",
     "license": "ISC",
     "dependencies": {
         "chalk": "^5.1.0",
@@ -16,6 +16,10 @@
         "fs": "^0.0.1-security",
         "fs-extra": "^10.1.0",
         "path": "^0.12.7"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DugarRishab/omni-clied.git"
     },
     "devDependencies": {
         "eslint": "^8",
