@@ -1,17 +1,19 @@
 import chalk from 'chalk';
 import fs from 'fs-extra';
-import { Server } from 'http';
 import path from 'path';
 import * as url from 'url';
+import userHandler from '../handlers/node-server/userHandler.js';
+import authHandler from '../handlers/node-server/authHandler.js';
+import googleOAuthHandler from '../handlers/node-server/googleOAuthHandler.js';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
-const nodeServer = (options) => {
+const nodeServer = async (options) => {
     createDir('./server');
 
     const server = path.join(
         __dirname,
-        '../../lib/templates/node-server/original/'
+        '../../lib/templates/node-server/original'
     );
     fs.copySync(server, process.cwd() + '/server');
     // console.log(server);
@@ -20,29 +22,20 @@ const nodeServer = (options) => {
     //     // options.user = true;
     //     options.auth = true;
     // }
-
-    if (options.user) {
-        // Full path to the current directory
         const templatesPath = path.join(
             __dirname,
-            '../../lib/templates/node-server/optional/user'
+            '../../lib/templates/node-server/optional'
         );
-        updateDir(templatesPath);
+    if (options.user && !options.auth) {
+        await userHandler(options, templatesPath)
     }
     if (options.auth) {
-        // Full path to the current directory
-        const templatesPath = path.join(
-            __dirname,
-            '../../lib/templates/node-server/optional/auth'
-        );
-        updateDir(templatesPath);
+
+        await authHandler(options, templatesPath);
     }
     if (options.googleOauth) {
-        const templatesPath = path.join(
-            __dirname,
-            '../../lib/templates/node-server/optional/googleOauth'
-        );
-        console.log("promise", updateDir(templatesPath));
+       
+        await googleOAuthHandler(options, templatesPath);
     }
 
     console.log(chalk.green('Node Server created by the name of `server`'));
