@@ -16,64 +16,21 @@ const nodeServer = async (options) => {
         '../../lib/templates/node-server/original'
     );
     fs.copySync(server, process.cwd() + '/server');
-    // console.log(server);
-    // console.log(options);
-    // if (options.googleOauth) {
-    //     // options.user = true;
-    //     options.auth = true;
-    // }
-        const templatesPath = path.join(
-            __dirname,
-            '../../lib/templates/node-server/optional'
-        );
+
+    const templatesPath = path.join(__dirname, '../../lib/templates/node-server/optional');
+
     if (options.user && !options.auth) {
         await userHandler(options, templatesPath)
     }
     if (options.auth) {
-
         await authHandler(options, templatesPath);
     }
-    if (options.googleOauth) {
-       
+    if (options.googleOauth) {  
         await googleOAuthHandler(options, templatesPath);
     }
 
     console.log(chalk.green('Node Server created by the name of `server`'));
 };
-const updateDir = async (templatesPath) =>
-    fs.readdir(templatesPath, (err, files) => {
-        if (err) {
-            console.log('An error occured: ', err);
-            process.exit(1);
-        }
-        // console.log(files);
-        files.map((fileName) => {
-            try {
-                const src = path.join(templatesPath, '/' + fileName);
-                let des;
-
-                if (fileName.includes('Controller')) {
-                    console.debug('Updating controller at: %s', fileName);
-                    des = process.cwd() + '/server/controllers/' + fileName;
-                } else if (fileName.includes('Routes')) {
-                    console.debug('Updating routers at: %s', fileName);
-                    des = process.cwd() + '/server/routes/' + fileName;
-                } else if (fileName.includes('Model')) {
-                    console.debug('Updating models at: %s', fileName);
-                    des = process.cwd() + '/server/models/' + fileName;
-                } else if (fileName.includes('Utils')) {
-                    console.debug('Updating utils at: %s', fileName);
-                    des = process.cwd() + '/server/utils/' + fileName;
-                } else {
-                    console.debug('Updating %s', fileName);
-                    des = process.cwd() + '/server/' + fileName;
-                }
-                fs.copyFileSync(src, des);
-            } catch (err) {
-                console.log(chalk.red('Error: ', err));
-            }
-        });
-    });
 
 const copyFile = (src, des) => {
     fs.copyFile(src, des);
