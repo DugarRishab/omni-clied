@@ -1,0 +1,22 @@
+doctype html 
+
+html 
+	head 
+		block head 
+			title Home Page
+			link(rel='preconnect' href='https://fonts.googleapis.com')
+			link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+
+	body 
+		include _headerView
+
+		block content 
+			h1 Home page 
+
+
+		// Footer ->>
+		include _footerView
+
+		script(src='/script/bundle.js')
+
+		

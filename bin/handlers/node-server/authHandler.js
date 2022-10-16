@@ -12,7 +12,7 @@ const authHandler = async (options, templatesPath) => {
         // console.log(files);
         files.map((fileName) => {
             try {
-                const src = path.join(templatesPath, '/' + fileName);
+                const src = path.join(templatesPath, '/', fileName);
                 let des;
 
                 if (fileName.includes('Controller')) {
@@ -27,7 +27,11 @@ const authHandler = async (options, templatesPath) => {
                 } else if (fileName.includes('Utils')) {
                     console.debug('Creating utils at: %s', fileName);
                     des = process.cwd() + '/server/utils/' + fileName;
-                } else {
+                }
+                else if (fileName === 'dependencies.json') {
+                    console.debug('')
+                }
+                else {
                     console.debug('Creating %s', fileName);
                     des = process.cwd() + '/server/' + fileName;
                 }

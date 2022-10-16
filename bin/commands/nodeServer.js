@@ -4,6 +4,7 @@ import path from 'path';
 import * as url from 'url';
 import userHandler from '../handlers/node-server/userHandler.js';
 import authHandler from '../handlers/node-server/authHandler.js';
+import viewHandler from '../handlers/node-server/viewHandler.js';
 import googleOAuthHandler from '../handlers/node-server/googleOAuthHandler.js';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
@@ -27,6 +28,9 @@ const nodeServer = async (options) => {
     }
     if (options.googleOauth) {  
         await googleOAuthHandler(options, templatesPath);
+    }
+    if (options.views) {
+        await viewHandler(options, templatesPath);
     }
 
     console.log(chalk.green('Node Server created by the name of `server`'));
