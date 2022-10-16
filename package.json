@@ -42,6 +42,8 @@
         "build",
         "applications",
         "apps",
-        "template"
+        "template",
+        "cli",
+        "creator"
     ]
 }

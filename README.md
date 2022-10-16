@@ -1,8 +1,8 @@
 # omni-clied
 
-omni-clied or just *omni* is a tool that helps you develop applications by making you a template to avoid writing all those repetative functions and boost your productivity.
+omni-clied or just *omni* is a tool that helps you develop applications fast and effciently. You can use this application made by this tool as it is or use it as a template to avoid writing all those repetative functions and boost your productivity.
 
-If you are on your 4th or higher project, you might have noticed you are copying a lot of code from your previous projects. This reduces your productivity and takes up a lot of time. So, use templates created by moni-clied to boost your speed and efficiency. 
+You might have noticed you are copying a lot of code from your previous projects. This reduces your productivity and takes up a lot of time. So, use templates created by omni-clied to boost your speed and efficiency. 
 
 ## Installation 
 
