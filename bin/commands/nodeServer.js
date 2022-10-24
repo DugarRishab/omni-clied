@@ -18,19 +18,35 @@ const nodeServer = async (options) => {
     );
     fs.copySync(server, process.cwd() + '/server');
 
-    const templatesPath = path.join(__dirname, '../../lib/templates/node-server/optional');
+    let templatesPath = path.join(__dirname, '../../lib/templates/node-server/optional');
 
     if (options.user && !options.auth) {
-        await userHandler(options, templatesPath)
+        templatesPath = path.join(
+            __dirname,
+            '../../lib/templates/node-server/optional/user'
+        );
+        await authHandler(options, templatesPath)
     }
     if (options.auth) {
+        templatesPath = path.join(
+            __dirname,
+            '../../lib/templates/node-server/optional/auth'
+        );
         await authHandler(options, templatesPath);
     }
     if (options.googleOauth) {  
-        await googleOAuthHandler(options, templatesPath);
+        templatesPath = path.join(
+            __dirname,
+            '../../lib/templates/node-server/optional/googleOauth'
+        );
+        await authHandler(options, templatesPath);
     }
-    if (options.views) {
-        await viewHandler(options, templatesPath);
+    if (options.view) {
+        templatesPath = path.join(
+            __dirname,
+            '../../lib/templates/node-server/optional/views'
+        );
+        await authHandler(options, templatesPath);
     }
 
     console.log(chalk.green('Node Server created by the name of `server`'));

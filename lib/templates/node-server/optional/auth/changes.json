@@ -1,0 +1,22 @@
+{
+	"files": {
+        "overwrites": ["authController.js", "authRoutes.js", "userRoutes.js", "userController.js", "userModel.js"],
+        "updates": [
+            {
+                "srcFilename": "app.json",
+				"desFilename": "app.js"
+            }
+        ],
+        "deletes": []
+    },
+	"dir":{
+		"new": [
+		],
+		"deletes": [
+		]
+	},
+	"lines": {
+
+	}
+	
+}

@@ -1,0 +1,20 @@
+{
+	"files": {
+        "overwrites": ["viewController.js", "viewRoutes.js", "landingView.pug", "_footerView.pug", "_headerView.pug"],
+        "updates": [
+            {
+                "srcFilename": "app.json",
+				"desFilename": "app.js"
+            }
+        ],
+        "deletes": []
+    },
+	"dir":{
+		"new": ["/views", "/public", "/public/scripts", "/public/styles"],
+		"deletes": [
+		]
+	},
+	"lines": {
+
+	}
+}

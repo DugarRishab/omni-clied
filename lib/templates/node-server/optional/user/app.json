@@ -1,0 +1,10 @@
+[
+    {
+        "code": "+// USE ROUTERS",
+        "lines": "\napp.use('/api/v1/user/', userRouter); // <- Calling the user router"
+    },
+    {
+        "code": "+// IMPORT ROUTERS",
+        "lines": "\nconst userRouter = require('./routes/userRoutes');"
+    }
+]

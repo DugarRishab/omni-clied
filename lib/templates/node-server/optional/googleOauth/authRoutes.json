@@ -1,0 +1,6 @@
+[
+    {
+        "code": "-module.exports = Router;",
+        "lines": "Router.get('/google', authController.googleAuth);"
+    }
+]
