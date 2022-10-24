@@ -1,0 +1,10 @@
+[
+    {
+        "code": "+",
+        "lines": "\nJWT_SECRET= 3214jid0eoy981nbucji3h1879 # Random 10+ char string, change this if you want. \nJWT_TIMEOUT= 90d # expiry time of the cookie. change this if you want  \nJWT_COOKIE_EXPIRES_IN=90*24*60*60*1000   # samething as above but In milliseconds"
+    },
+    {
+        "code": "+",
+        "lines": "\nGOOGLE_CLIENT_ID = # Get this from API credentials page in google cloud console \nGOOGLE_CLIENT_SECRET = # same as above"
+    }
+]

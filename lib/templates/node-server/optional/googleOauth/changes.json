@@ -1,21 +1,32 @@
 {
 	"files": {
-        "overwrites": ["authController.js", "authRoutes.js", "userRoutes.js", "userController.js", "userModel.js", "oauth2clientUtils.js"],
+        "overwrites": [
+            "authController.js",
+            "authRoutes.js",
+            "userRoutes.js",
+            "userController.js",
+            "userModel.js",
+            "oauth2clientUtils.js"
+        ],
         "updates": [
             {
                 "srcFilename": "authController.json",
-				"desFilename": "authController.js"
+                "desFilename": "authController.js"
             },
-			{
+            {
                 "srcFilename": "app.json",
                 "desFilename": "app.js"
             },
-			{
+            {
                 "srcFilename": "authRoutes.json",
-				"desFilename": "authRoutes.js"
+                "desFilename": "authRoutes.js"
+            },
+            {
+                "srcFilename": "config.json",
+                "desFilename": "config.env"
             }
         ],
-        "deletes": []
+        "deletes": ["userRoutes.js"]
     },
 	"dir":{
 		"new": [

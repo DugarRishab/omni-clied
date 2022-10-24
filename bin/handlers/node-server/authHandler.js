@@ -8,6 +8,7 @@ const authHandler = async (options, templatesPath) => {
     // console.log(typeof change);
     // console.log(change);
 
+
     change.dir.new.forEach((dirname) => {
         const isDirPresent = fs.existsSync(
             path.join(process.cwd(), 'server', dirname)
@@ -19,30 +20,23 @@ const authHandler = async (options, templatesPath) => {
         }
     });
 
+    change.files.deletes.forEach((fileName) => {
+
+        let des = desPath(fileName);
+
+        const isFilePresent = fs.existsSync(des);
+        console.log(fileName, '-> ', isFilePresent);
+
+        if (isFilePresent) {
+            fs.unlinkSync(des);
+        }
+    })
+
     change.files.overwrites.forEach((fileName) => {
         const src = path.join(templatesPath, fileName);
         // console.log(srcFile);
 
-        let des;
-        if (fileName.includes('Controller')) {
-            console.debug('Creating controller at: %s', fileName);
-            des = path.join(process.cwd() + '/server/controllers/' + fileName);
-        } else if (fileName.includes('Routes')) {
-            console.debug('Creating routers at: %s', fileName);
-            des = path.join(process.cwd() + '/server/routes/' + fileName);
-        } else if (fileName.includes('Model')) {
-            console.debug('Creating models at: %s', fileName);
-            des = path.join(process.cwd() + '/server/models/' + fileName);
-        } else if (fileName.includes('Utils')) {
-            console.debug('Creating utils at: %s', fileName);
-            des = path.join(process.cwd() + '/server/utils/' + fileName);
-        } else if (fileName.includes('View')) {
-            console.debug('Updating views at: %s', fileName);
-            des = process.cwd() + '/server/views/' + fileName;
-        } else {
-            console.debug('Creating %s', fileName);
-            des = path.join(process.cwd() + '/server/' + fileName);
-        }
+        let des = desPath(fileName);
 
         const isFilePresent = fs.existsSync(des);
         console.log(fileName, '-> ', isFilePresent);
@@ -57,27 +51,7 @@ const authHandler = async (options, templatesPath) => {
             path.join(templatesPath, update.srcFilename)
         );
         // console.log(srcFile);
-        let des;
-        if (update.desFilename.includes('Controller')) {
-            console.debug('Updating controller at: %s', update.desFilename);
-            des = process.cwd() + '/server/controllers/' + update.desFilename;
-        } else if (update.desFilename.includes('Routes')) {
-            console.debug('Updating routers at: %s', update.desFilename);
-            des = process.cwd() + '/server/routes/' + update.desFilename;
-        } else if (update.desFilename.includes('Model')) {
-            console.debug('Updating models at: %s', update.desFilename);
-            des = process.cwd() + '/server/models/' + update.desFilename;
-        } else if (update.desFilename.includes('Utils')) {
-            console.debug('Updating utils at: %s', update.desFilename);
-            des = process.cwd() + '/server/utils/' + update.desFilename;
-        } else if (update.desFilename.includes('View')) {
-            console.debug('Updating views at: %s', update.desFilename);
-            des = process.cwd() + '/server/views/' + update.desFilename;
-        } else {
-            console.debug('Updating %s', update.desFilename);
-            des = process.cwd() + '/server/' + update.desFilename;
-        }
-
+        let des = desPath(update.desFilename);
         let desFile = fs.readFileSync(des, 'utf-8');
         // console.log(desFile);
 
@@ -155,5 +129,29 @@ const authHandler = async (options, templatesPath) => {
         );
     }
 };
+
+const desPath = (fileName) => {
+    let des;
+    if (fileName.includes('Controller')) {
+        console.debug('Creating controller at: %s', fileName);
+        des = path.join(process.cwd() + '/server/controllers/' + fileName);
+    } else if (fileName.includes('Routes')) {
+        console.debug('Creating routers at: %s', fileName);
+        des = path.join(process.cwd() + '/server/routes/' + fileName);
+    } else if (fileName.includes('Model')) {
+        console.debug('Creating models at: %s', fileName);
+        des = path.join(process.cwd() + '/server/models/' + fileName);
+    } else if (fileName.includes('Utils')) {
+        console.debug('Creating utils at: %s', fileName);
+        des = path.join(process.cwd() + '/server/utils/' + fileName);
+    } else if (fileName.includes('View')) {
+        console.debug('Updating views at: %s', fileName);
+        des = process.cwd() + '/server/views/' + fileName;
+    } else {
+        console.debug('Creating %s', fileName);
+        des = path.join(process.cwd() + '/server/' + fileName);
+    }
+    return des;
+}
 
 export default authHandler;
