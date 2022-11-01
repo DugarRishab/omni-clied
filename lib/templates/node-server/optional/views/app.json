@@ -4,6 +4,10 @@
         "lines": "\napp.use('/', viewRouter); // <- Calling the view router"
     },
     {
+        "code": "+// USE ROUTERS",
+        "lines": "\napp.use((req, res, next) => {\nres.setHeader('Content-Type', 'text/html');\nnext();\n});"
+    },
+    {
         "code": "+// IMPORT ROUTERS",
         "lines": "\nconst viewRouter = require('./routes/viewRoutes');"
     },

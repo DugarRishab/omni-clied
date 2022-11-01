@@ -4,7 +4,8 @@
     "description": "",
     "main": "./bin/index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "watch:js": "parcel watch ./public/scripts/index.js --out-dir ./public/scripts --out-file bundle.js"
     },
     "type": "module",
     "author": "Rishab Dugar <www.anitadugar9163@gmail.com>(www.anitadugar9163@gmail.com)",
