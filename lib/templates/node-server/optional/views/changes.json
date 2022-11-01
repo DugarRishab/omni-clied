@@ -1,6 +1,31 @@
 {
 	"files": {
-        "overwrites": ["viewController.js", "viewRoutes.js", "landingView.pug", "_footerView.pug", "_headerView.pug"],
+        "overwrites": [
+            {
+                "src": "viewController.js",
+                "des": "/controllers"
+            },
+            {
+                "src": "viewRoutes.js",
+                "des": "/routes"
+            },
+            {
+                "src": "landingView.pug",
+                "des": "/views"
+            },
+            {
+                "src": "_footerView.pug",
+                "des": "/views"
+            },
+            {
+                "src": "_headerView.pug",
+                "des": "/views"
+            },
+            {
+                "src": "index.js",
+                "des": "/public/scripts"
+            }
+        ],
         "updates": [
             {
                 "srcFilename": "app.json",

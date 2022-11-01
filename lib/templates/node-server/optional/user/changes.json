@@ -1,6 +1,19 @@
 {
 	"files": {
-        "overwrites": ["userRoutes.js", "userController.js", "userModel.js"],
+        "overwrites": [
+            {
+                "src": "userController.js",
+                "des": "/controllers"
+            },
+            {
+                "src": "userRoutes.js",
+                "des": "/routes"
+            },
+			{
+                "src": "userModel.js",
+                "des": "/models"
+            }
+        ],
         "updates": [
             {
                 "srcFilename": "app.json",

@@ -5,6 +5,6 @@
     },
     {
         "code": "-",
-        "lines": "const oauth2Client = require('../utils/oauth2clientUtils');"
+        "lines": "const oauth2Client = require('../utils/oauth2client');"
     }
 ]

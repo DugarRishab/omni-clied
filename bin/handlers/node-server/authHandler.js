@@ -20,26 +20,26 @@ const authHandler = async (options, templatesPath) => {
         }
     });
 
-    change.files.deletes.forEach((fileName) => {
+    change.files.deletes.forEach((file) => {
 
-        let des = desPath(fileName);
+        let des = path.join(process.cwd(), 'server', file.des, file.src);
 
         const isFilePresent = fs.existsSync(des);
-        console.log(fileName, '-> ', isFilePresent);
+        console.log(file.src, '-> ', isFilePresent);
 
         if (isFilePresent) {
             fs.unlinkSync(des);
         }
     })
 
-    change.files.overwrites.forEach((fileName) => {
-        const src = path.join(templatesPath, fileName);
+    change.files.overwrites.forEach((file) => {
+        const src = path.join(templatesPath, file.src);
         // console.log(srcFile);
 
-        let des = desPath(fileName);
+        let des = path.join(process.cwd(), 'server', file.des, file.src);
 
         const isFilePresent = fs.existsSync(des);
-        console.log(fileName, '-> ', isFilePresent);
+        console.log(file.src, '-> ', isFilePresent);
 
         if (!isFilePresent) {
             fs.copyFileSync(src, des);

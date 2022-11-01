@@ -1,11 +1,26 @@
 {
     "files": {
         "overwrites": [
-            "authController.js",
-            "authRoutes.js",
-            "userRoutes.js",
-            "userController.js",
-            "userModel.js"
+            {
+                "src": "userController.js",
+                "des": "/controllers"
+            },
+            {
+                "src": "userRoutes.js",
+                "des": "/routes"
+            },
+            {
+                "src": "userModel.js",
+                "des": "/models"
+            },
+            {
+                "src": "authController.js",
+                "des": "/controllers"
+            },
+            {
+                "src": "authRoutes.js",
+                "des": "/routes"
+            }
         ],
         "updates": [
             {
@@ -17,7 +32,12 @@
                 "desFilename": "config.env"
             }
         ],
-        "deletes": ["userRoutes.js"]
+        "deletes": [
+            {
+                "src": "userRoutes.js",
+                "des": "/routes"
+            }
+        ]
     },
     "dir": {
         "new": [],
