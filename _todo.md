@@ -7,7 +7,7 @@ List of planned features to be implemented
 - [x] user
 - [x] auth
 - [x] google OAuth
-- [ ] view controller ~ *in progress*
+- [x] view controller ~ *in progress*
 - [ ] email support
 - [ ] facebook OAuth
 

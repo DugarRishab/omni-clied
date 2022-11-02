@@ -2,10 +2,7 @@ import chalk from 'chalk';
 import fs from 'fs-extra';
 import path from 'path';
 import * as url from 'url';
-import userHandler from '../handlers/node-server/userHandler.js';
-import authHandler from '../handlers/node-server/authHandler.js';
-import viewHandler from '../handlers/node-server/viewHandler.js';
-import googleOAuthHandler from '../handlers/node-server/googleOAuthHandler.js';
+import fileHandler from '../handlers/node-server/fileHandler.js';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
@@ -25,28 +22,28 @@ const nodeServer = async (options) => {
             __dirname,
             '../../lib/templates/node-server/optional/user'
         );
-        await authHandler(options, templatesPath)
+        await fileHandler(options, templatesPath)
     }
     if (options.auth) {
         templatesPath = path.join(
             __dirname,
             '../../lib/templates/node-server/optional/auth'
         );
-        await authHandler(options, templatesPath);
+        await fileHandler(options, templatesPath);
     }
     if (options.googleOauth) {  
         templatesPath = path.join(
             __dirname,
             '../../lib/templates/node-server/optional/googleOauth'
         );
-        await authHandler(options, templatesPath);
+        await fileHandler(options, templatesPath);
     }
     if (options.view) {
         templatesPath = path.join(
             __dirname,
             '../../lib/templates/node-server/optional/views'
         );
-        await authHandler(options, templatesPath);
+        await fileHandler(options, templatesPath);
     }
 
     console.log(chalk.green('Node Server created by the name of `server`'));
