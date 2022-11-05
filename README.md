@@ -1,4 +1,4 @@
-[logo](https://github.com/DugarRishab/omni/assets/omni%20logo/omni-high-resolution-logo-black-on-transparent-background.png)
+![logo](https://github.com/DugarRishab/omni/assets/omni%20logo/omni-high-resolution-logo-black-on-transparent-background.png)
 # omni-clied
 
 omni-clied or just *omni* is a tool that helps you develop applications fast and efficiently. You can use the application made by this tool as it is or use it as a template to avoid writing all those repetitive functions and boost your productivity.
