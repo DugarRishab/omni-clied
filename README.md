@@ -1,9 +1,14 @@
-![logo](https://github.com/DugarRishab/omni-clied/blob/main/assets/omni%20logo/omni-high-resolution-logo-black-on-transparent-background.png)
-# omni-clied
+![logo](./assets/omni%20logo/omni-high-resolution-logo-white-on-transparent-background.png)
 
-omni-clied or just *omni* is a tool that helps you develop applications fast and efficiently. You can use the application made by this tool as it is or use it as a template to avoid writing all those repetitive functions and boost your productivity.
+# Introducing Omni-clied
 
-You might have noticed you are copying a lot of code from your previous projects. This reduces your productivity and takes up a lot of time. So, use templates created by omni-clied to boost your speed and efficiency. 
+Omni (or Omni-CLIed) is a powerful command-line interface (CLI) tool designed to streamline the process of creating fully functional Node.js servers and React.js applications. With Omni, you can generate server-side code that comes prepackaged with essential features like Google OAuth or customizable JSON Web Token (JWT) authentication and user models.
+
+By leveraging Omni's intuitive and efficient CLI commands, developers can rapidly scaffold and initialize new projects, saving valuable time and effort. Whether you're starting a new web application or adding server functionality to an existing project, Omni empowers you to quickly set up secure and scalable server-side infrastructure.
+
+Omni's seamless integration with Node.js and React.js allows developers to effortlessly create the server and client components required for modern web applications. The generated server code includes robust authentication options, such as Google OAuth or the flexibility to implement your own JWT-based authentication system. This makes it easy to authenticate and manage user accounts within your application.
+
+With Omni, you can focus more on building the core features of your application rather than spending time on repetitive setup tasks. By automating the process of generating server-side and client-side code, Omni enables developers to jumpstart their projects and deliver high-quality applications faster.
 
 ## Installation 
 
