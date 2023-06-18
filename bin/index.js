@@ -14,10 +14,12 @@ program
 	.option("--view", "Implements a view controller for server-side rendering")
 	.action(nodeServer);
 	
-program
-	.command("react-app")
-	.description("Creates a template react app")
-	.option("--redux", "Implemets redux for advanced state maangement")
-	.action(nodeServer);
+// program
+// 	.command("react-app")
+// 	.description("Creates a template react app")
+// 	.option("--redux", "Implemets redux for advanced state maangement")
+// 	.option("--auth", "Includes a login and signup page")
+// 	.option("--google-oauth", "Implements google OAuth")
+// 	.action(reactApp);
 
 program.parse();
