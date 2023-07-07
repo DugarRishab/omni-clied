@@ -1,0 +1,68 @@
+{
+	"files": {
+		"required": [
+			{
+				"src": "viewController.js",
+				"des": "/controllers"
+			},
+			{
+				"src": "viewRoutes.js",
+				"des": "/routes"
+			},
+			{
+				"src": "landingView.pug",
+				"des": "/views"
+			},
+			{
+				"src": "_footerView.pug",
+				"des": "/views"
+			},
+			{
+				"src": "_headerView.pug",
+				"des": "/views"
+			},
+			{
+				"src": "index.js",
+				"des": "/public/scripts"
+			}
+		],
+		"updates": [
+			{
+				"des": "app.js",
+				"flags": {
+					"start": "// %USE ROUTERS% ->>",
+					"end": "// <<- %USE ROUTERS%"
+				},
+				"lines": [
+					"\napp.use((req, res, next) => {\nres.setHeader('Content-Type', 'text/html');\nnext();\n});",
+					"\napp.use('/', viewRouter); // <- Calling the view router"
+				]
+			},
+			{
+				"des": "app.js",
+				"flags": {
+					"start": "// %IMPORT ROUTERS% ->>",
+					"end":"// <<- %IMPORT ROUTERS%"
+				},
+				"lines":[
+					"\nconst viewRouter = require('./routes/viewRoutes');"
+				]
+			},
+			{
+				"des": "app.js",
+				"flags": {
+					"start": "// %USE MIDDLEWARES% ->>",
+					"end":  "// <<- %USE MIDDLEWARES%"
+				},
+				"lines": [
+					"\napp.set('view engine', 'pug');\napp.set('views', path.join( __dirname, 'views'));\napp.use(express.static(path.join(__dirname, 'public'))); "
+				]
+			}
+		],
+		"deletes": []
+	},
+	"dir": {
+		"new": ["/views", "/public", "/public/scripts", "/public/styles"],
+		"deletes": []
+	}
+}

@@ -1,0 +1,73 @@
+{
+	"files": {
+		"required": [
+			{
+				"src": "userController.js",
+				"des": "/controllers"
+			},
+			{
+				"src": "authController.js",
+				"des": "/controllers"
+			},
+			{
+				"src": "userRoutes.js",
+				"des": "/routes"
+			},
+			{
+				"src": "userModel.js",
+				"des": "/models"
+			},
+			{
+				"src": "authRoutes.js",
+				"des": "/routes"
+			}
+		],
+		"deletes": [
+			
+				 "/routes/userRoutes.js"
+			
+		],
+		"updates": [
+			{
+				"des": "app.js",
+				"strict": false,
+				"flags": {
+					"start": "// %USE ROUTERS% ->>",
+					"end": "// <<- %USE ROUTERS%"
+				},
+				"lines": [
+					"\napp.use('/api/v1/user/', userRouter); // <- Calling the user router",
+					"\napp.use('/api/v1/auth/', authRouter); // <- Calling the auth router"
+				]
+			},
+			{
+				"des": "app.js",
+				"strict": false,
+				"flags": {
+					"start": "// %IMPORT ROUTERS% ->>",
+					"end": "// <<- %IMPORT ROUTERS%"
+				},
+				"lines": [
+					"\nconst userRouter = require('./routes/userRoutes');",
+					"\nconst authRouter = require('./routes/authRoutes');"
+				]
+			},
+			{
+				"des": "config.env",
+				"lines": [
+					"\nJWT_SECRET= 3214jid0eoy981nbucji3h1879 # Random 10+ char string, change this if you want. \nJWT_TIMEOUT= 90d # expiry time of the cookie. change this if you want  \nJWT_COOKIE_EXPIRES_IN=90*24*60*60*1000   # samething as above but In milliseconds"
+				],
+
+				"flags": {
+					"start": "# %START% ->>",
+					"end": "# <<- %END%"
+				},
+				"strict": false
+			}
+		]
+	},
+	"dir": {
+		"new": [],
+		"deletes": []
+	}
+}

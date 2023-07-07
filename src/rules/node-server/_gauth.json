@@ -1,0 +1,106 @@
+{
+	"files": {
+		"required": [
+			{
+				"src": "userController.js",
+				"des": "/controllers"
+			},
+			{
+				"src": "userRoutes.js",
+				"des": "/routes"
+			},
+			{
+				"src": "userModel.js",
+				"des": "/models"
+			},
+			{
+				"src": "authController.js",
+				"des": "/controllers"
+			},
+			{
+				"src": "authRoutes.js",
+				"des": "/routes"
+			},
+			{
+				"src": "oauth2client.js",
+				"des": "/utils"
+			}
+		],
+		"deletes": ["/routes/userRoutes.js"],
+		"updates": [
+			{
+				"des": "/controllers/authController.js",
+				"src": "_scripts.js",
+				"flags": {
+					"start": "// %GOOGLE AUTH CONTROLLER% ->>",
+					"end": "// <<- %GOOGLE AUTH CONTROLLER%"
+				},
+				"strict": false
+			},
+			{
+				"des": "/controllers/authController.js",
+				"flags": {
+					"start": "// %IMPORT STATEMENTS% ->>",
+					"end": "// <<- %IMPORT STATEMENTS%"
+				},
+				"strict": false,
+				"lines": [
+					"const oauth2Client = require('../utils/oauth2client');"
+				]
+			},
+			{
+				"des": "app.js",
+				"flags": {
+					"start": "// %USE ROUTERS% ->>",
+					"end": "// <<- %USE ROUTERS%"
+				},
+				"strict": false,
+				"lines": [
+					"\napp.use('/api/v1/user/', userRouter); // <- Calling the user router",
+					"\napp.use('/api/v1/auth/', authRouter); // <- Calling the auth router"
+				]
+			},
+			{
+				"des": "app.js",
+				"flags": {
+					"start": "// %IMPORT ROUTERS% ->>",
+					"end": "// <<- %IMPORT ROUTERS%"
+				},
+				"strict": false,
+				"lines": [
+					"\nconst userRouter = require('./routes/userRoutes');",
+					"\nconst authRouter = require('./routes/authRoutes');"
+				]
+			},
+			{
+				"des": "/routes/authRoutes.js",
+				"flags": {
+					"start": "// %ROUTES% ->>",
+					"end": "// <<- %ROUTES%"
+				},
+				"lines": ["\nRouter.get('/google', authController.googleAuth);"],
+				"strict": false
+			},
+			{
+				"des": "/config.env",
+				"flags": {
+					"start": "# %START% ->>",
+					"end": "# <<- %END%"
+				},
+				"lines": [
+					"\nJWT_SECRET= 3214jid0eoy981nbucji3h1879 # Random 10+ char string, change this if you want. \nJWT_TIMEOUT= 90d # expiry time of the cookie. change this if you want  \nJWT_COOKIE_EXPIRES_IN=90*24*60*60*1000   # samething as above but In milliseconds",
+					"\nGOOGLE_CLIENT_ID = # Get this from API credentials page in google cloud console \nGOOGLE_CLIENT_SECRET = # same as above"
+				]
+			}
+		]
+	},
+	"dir": {
+		"new": [],
+		"deletes": [
+			{
+				"src": "userRoutes.js",
+				"des": "/routes"
+			}
+		]
+	}
+}

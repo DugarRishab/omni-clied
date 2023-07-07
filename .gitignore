@@ -1,2 +1,12 @@
+*-debug.log
+*-error.log
+/.nyc_output
+/dist
+/lib
+/package-lock.json
+/tmp
 node_modules
-./config.env
+oclif.manifest.json
+**/.DS_Store
+/.idea
+/.todo

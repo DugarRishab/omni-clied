@@ -1,0 +1,46 @@
+TODO: 
+	- [x] Transfer everything from v1 to v2
+	- [x] Make a rules dir and make rules for each command there. 
+	- [x] Complete v1 features by tonight
+	- [x] Help Nofis
+
+IDEA: 
+	- There will be a rules dir and a rules.json for each command and sub-command
+	- When *create* commnd is activated: 
+		- first a base command (without any args) will be executed new base dir will be created
+		- Then each arg will be implemented by calling their respective function. 
+		- Each arg will have their respective function and their respectiuve rules.json
+	- When *add* command is activated: 
+		- first it will check if various files/dir are present. 
+		- if not then it will create those files/dir
+		- If yes then it will simply find the markers and add code bw them.
+		- If something is already present bw them, then it will ask for user permission before overwritting. 
+	- Markers: 
+		- there will be 2 markers for every code-line
+		- 1 starting and 1 ending
+		- if there is no code found between starting and ending - it means that 	  the feature is not implemented. 
+
+
+Commands: 
+	- node-server:
+		- create
+		- add --force
+	- react:
+		- create
+		- add --force
+
+file dir: 
+
+	src:
+	- commands:
+		- node-server.js
+		- react-app.js
+	- handlers:
+		- fileHandler.js
+			desc: same for all commands 
+	- rules:
+		- node-server.json
+			desc: equal to changes.json file
+		- react-app.json 
+		desc: equal to changes.json file
+

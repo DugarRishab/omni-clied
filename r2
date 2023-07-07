@@ -17,10 +17,13 @@ With Omni, you can focus more on building the core features of your application 
 
 
 <!-- toc -->
-* [Omni-clied 2.0](#omni-clied-20)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Commands](#commands)
+- [Omni-clied 2.0](#omni-clied-20)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Commands](#commands)
+	- [`omni-clied help [COMMANDS]`](#omni-clied-help-commands)
+	- [`omni-clied node-server create DIR`](#omni-clied-node-server-create-dir)
+	- [Note:](#note)
 <!-- tocstop -->
 
 # Installation 
@@ -129,3 +132,5 @@ EXAMPLES
 Currently, omni-clied only supports `node-server` but support for more applications will be released soon. 
 
 If you have an idea you would like us to add or you found a bug, please add them on the [issues](https://github.com/DugarRishab/omni-clied/issues) page of our Github. You can also write to me directly on this [email](mailto:www.anitadugar9163@gmail.com)
+
+
