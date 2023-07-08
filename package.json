@@ -1,7 +1,7 @@
 {
 	"name": "omni-clied",
 	"description": "Omni-CLIed is a powerful command-line interface (CLI) framework designed to streamline the process of creating fully functional Node.js servers and React.js applications.",
-	"version": "2.0.1-0",
+	"version": "2.0.1",
 	"author": "Rishab Dugar <www.anitadugar9163@gmail.com>(www.anitadugar9163@gmail.com)",
 	"bin": {
 		"omni-clied": "./bin/run.js"
