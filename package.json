@@ -41,7 +41,8 @@
 		"/bin",
 		"/dist",
 		"/npm-shrinkwrap.json",
-		"/oclif.manifest.json"
+		"/oclif.manifest.json",
+		"/templates"
 	],
 	"homepage": "https://www.npmjs.com/package/omni-clied",
 	"license": "MIT",
