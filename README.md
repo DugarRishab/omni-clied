@@ -1,6 +1,5 @@
 # Omni-clied 2.0
 
-
 ![logo](./assets/omni%20logo/omni-high-resolution-logo-white-on-transparent-background.png)
 
 Omni (or Omni-CLIed) is a powerful command-line interface (CLI) tool designed to streamline the process of creating fully functional Node.js servers and React.js applications. With Omni, you can generate server-side code that comes prepackaged with essential features like Google OAuth or customizable JSON Web Token (JWT) authentication and user models.
