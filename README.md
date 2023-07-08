@@ -16,13 +16,11 @@ With Omni, you can focus more on building the core features of your application 
 
 
 <!-- toc -->
-- [Omni-clied 2.0](#omni-clied-20)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Commands](#commands)
-  - [`omni-clied help [COMMANDS]`](#omni-clied-help-commands)
-  - [`omni-clied node-server create DIR`](#omni-clied-node-server-create-dir)
-- [Note:](#note)
+* [Omni-clied 2.0](#omni-clied-20)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Commands](#commands)
+* [Note:](#note)
 <!-- tocstop -->
 
 # Installation 
