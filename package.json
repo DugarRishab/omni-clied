@@ -4,7 +4,7 @@
 	"version": "2.0.0",
 	"author": "Rishab Dugar <www.anitadugar9163@gmail.com>(www.anitadugar9163@gmail.com)",
 	"bin": {
-		"omni-clied": "./bin/dev"
+		"omni-clied": "./bin/run.js"
 	},
 	"bugs": "https://github.com/DugarRishab/omni-clied/issues",
 	"dependencies": {
@@ -51,6 +51,10 @@
 		"dirname": "omni-clied",
 		"commands": "./dist/commands",
 		"topicSeparator": " ",
+		"plugins": [
+			"@oclif/plugin-help",
+			"@oclif/plugin-plugins"
+		],
 		"topics": {
 			"node-server": {
 				"description": "Create Nodejs applications"
